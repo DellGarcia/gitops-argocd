@@ -98,6 +98,18 @@ Com isso o ArgoCD vai automaticamente criar os recursos no namespace solicitado.
 
 <img width="1861" height="342" alt="image" src="https://github.com/user-attachments/assets/f9d6ebe7-d817-455c-88a4-eaf5d7129a6e" />
 
+## Visualizado página WEB da aplicação
+
+Para visualizar a página será necessário realizar um port forwarding assim como foi foi para o ArgoCD, basta executar o seguinte comando:
+
+```bash
+kubectl port-forward -n online-boutique svc/frontend 3333:80
+```
+
+Com isso o site estará acessível em http://localhost:3333.
+
+<img width="1853" height="970" alt="image" src="https://github.com/user-attachments/assets/e82d0a65-97d4-4814-86da-12935f518555" />
+
 ## Configurando Auto Sync
 
 O Auto Sync faz com que o ArgoCD cheque periodicamente se houve novos commits no repositório alvo e automaticamente realizar os ajustes necessário no deploy caso necessário.
