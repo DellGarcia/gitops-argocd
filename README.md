@@ -50,4 +50,17 @@ Daí basta colocar o usuário **admin** e colocar a senha para acessar o dashboa
 
 <img width="1867" height="974" alt="image" src="https://github.com/user-attachments/assets/4b16f0ca-6550-40d8-9473-8d440ac1c62b" />
 
+### Criando um APP no ArgoCD
+
+Para que o ArgoCD comece de fato a obsvervar um repositório git e realizar o deploy automatico devemos criar um **app** dentro do ArgoCD, para isso acesse o Dashboard do ArgoCD e clique em "+ NEW APP".
+
+<img width="1032" height="112" alt="image" src="https://github.com/user-attachments/assets/47356491-9d9a-4508-8fcf-690a6586fcf4" />
+
+Na seção "General" dê um nome ao App em ApplicationName, por exemplo "Online-Boutique", em Project marque a opção "default" e em SyncPolice deixe "Manual", as demais opções não precisa mudar.
+
+Na seção "Source" cole a URL do repositório adicionado .git no final do link.
+
+```text
+
+```
 
