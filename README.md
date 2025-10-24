@@ -125,3 +125,30 @@ Loadgenerator antes do commit:
 
 Alguns minutos depois:
 <img width="1126" height="161" alt="image" src="https://github.com/user-attachments/assets/d7c4eaab-2356-4989-92f4-a03081dfb364" />
+
+
+## Aplicando ArgoCD em repositórios privados
+
+Em um caso real normalmente as aplicações não costumam ficar com o código fonte exposto ao público, geralmente isso fica protegido em um repositório privado. Então surge a dúvida como posso aplicar o uso do ArgoCD se meu repositório esta privado? Testei duas formas de resolver esse problema, segue a abaixo como aplicá-las:
+
+### 1 - Criar um Github PAT
+Github Pat permite criar um token de acesso temporário* a um repositório. Ele é bem interessante pois permite dar acesso apenas aos recursos necessários, podendo configurar até se é permitido somente leitura ou leitura e escrita, e ainda é bem simples de se usar uma vez gerado o token basta usá-lo em uma URL como a seguinte:
+
+```text
+https://<PAT>@github.com/<USUARIO>/<REPOSITORIO>.git
+```
+
+Montando a URL acima basta adicioná-la em um APP no ArgoCD e ele vai conseguir acessar o repositório normalmente.
+
+Obs: É recomendavel que esse token tenha um tempo de expiração por motivos de segurança, mas é possível criar um que nunca expire.
+
+### 2 - Configurar o acesso SSH
+O ArgoCD permite adicionar repositórios privados com acesso via SSH, para isso acesse "Settings" e então clique em "Repositories", então clique em "+ CONNECT REPO".
+
+Selecione a opção "Via SSH", e então preencha os campos solicitados inclusive qual a chave SSH para acessar o repositório.
+
+<img width="1853" height="932" alt="image" src="https://github.com/user-attachments/assets/4fe51f69-60c7-4361-a7a9-1c2024ed8d5b" />
+
+Caso não saiba como criar uma chave SSH para o github o link abaixo explica como fazer isso:
+
+[https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
