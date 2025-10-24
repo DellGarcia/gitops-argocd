@@ -76,7 +76,7 @@ Em Revision selecione **HEAD** e em Path coloque "k8s".
 
 <img width="1447" height="449" alt="image" src="https://github.com/user-attachments/assets/a3e9c750-5e84-41c0-b019-b21dd57c49b9" />
 
-Na Seção "Destiantion" em Cluster URL coloque o seguinte:
+Na Seção "Destination" em Cluster URL coloque o seguinte:
 
 ```text
 https://kubernetes.default.svc
