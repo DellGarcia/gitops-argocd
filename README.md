@@ -86,3 +86,12 @@ No campo namespace coloque o nome do namespace criado anteriormente.
 
 <img width="1443" height="330" alt="image" src="https://github.com/user-attachments/assets/e3871d7b-33ec-42d8-88ab-21b106b659b6" />
 
+Então clique em create no topo da página, com isso obterá o seguinte resultado:
+
+<img width="1857" height="326" alt="image" src="https://github.com/user-attachments/assets/a68b42c4-ea89-483e-a2ab-975ccd75de4c" />
+
+Para que de fato o ArgoCD comece a criação dos recursos clique em "Sync" e depois em "Syncronize".
+
+<img width="1861" height="342" alt="image" src="https://github.com/user-attachments/assets/4f1de4c6-99a0-4f75-b209-60a795ae305a" />
+
+Com isso o ArgoCD vai automaticamente criar os recursos no namespace solicitado. Se tudo ocorrer como esperado vai aparecer a mensagem "Healthy" no campo APP HEALTH.
