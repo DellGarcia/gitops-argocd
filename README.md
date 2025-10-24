@@ -95,3 +95,21 @@ Para que de fato o ArgoCD comece a criação dos recursos clique em "Sync" e dep
 <img width="1861" height="342" alt="image" src="https://github.com/user-attachments/assets/4f1de4c6-99a0-4f75-b209-60a795ae305a" />
 
 Com isso o ArgoCD vai automaticamente criar os recursos no namespace solicitado. Se tudo ocorrer como esperado vai aparecer a mensagem "Healthy" no campo APP HEALTH.
+
+<img width="1861" height="342" alt="image" src="https://github.com/user-attachments/assets/f9d6ebe7-d817-455c-88a4-eaf5d7129a6e" />
+
+## Configurando Auto Sync
+
+O Auto Sync faz com que o ArgoCD cheque periodicamente se houve novos commits no repositório alvo e automaticamente realizar os ajustes necessário no deploy caso necessário.
+Para ativar basta ir na aba "Details" e na seção "Sync Policy" clicar em "Enable Auto Sync".
+
+<img width="1425" height="183" alt="image" src="https://github.com/user-attachments/assets/239bda92-4259-448b-a159-0e434b135cad" />
+
+## Testando Auto Sync
+Realizar esse teste é bem simples basta alterar algo no online-boutique.yaml e realizar um commit, por exemplo pode pesquisar no arquivo pela palavra réplica no loadgenerator e alterar de 1 para 2.
+
+Loadgenerator antes do commit:
+<img width="1126" height="161" alt="image" src="https://github.com/user-attachments/assets/55c0c923-4776-4022-8a27-9dcceb58aad8" />
+
+Alguns minutos depois:
+<img width="1126" height="161" alt="image" src="https://github.com/user-attachments/assets/d7c4eaab-2356-4989-92f4-a03081dfb364" />
