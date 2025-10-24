@@ -52,7 +52,15 @@ Daí basta colocar o usuário **admin** e colocar a senha para acessar o dashboa
 
 ### Criando um APP no ArgoCD
 
-Para que o ArgoCD comece de fato a obsvervar um repositório git e realizar o deploy automatico devemos criar um **app** dentro do ArgoCD, para isso acesse o Dashboard do ArgoCD e clique em "+ NEW APP".
+Para que o ArgoCD comece de fato a obsvervar um repositório git e realizar o deploy automatico devemos criar um **app** dentro do ArgoCD.
+
+Primeiro crie um namespace para o App, com o comando abaixo:
+
+```bash
+kubectl create namespace online-boutique
+```
+
+Então acesse o Dashboard do ArgoCD e clique em "+ NEW APP".
 
 <img width="1032" height="112" alt="image" src="https://github.com/user-attachments/assets/47356491-9d9a-4508-8fcf-690a6586fcf4" />
 
@@ -61,6 +69,20 @@ Na seção "General" dê um nome ao App em ApplicationName, por exemplo "Online-
 Na seção "Source" cole a URL do repositório adicionado .git no final do link.
 
 ```text
-
+https://github.com/DellGarcia/gitops-kubernetes-microservices/
 ```
+
+Em Revision selecione **HEAD** e em Path coloque "k8s".
+
+<img width="1447" height="449" alt="image" src="https://github.com/user-attachments/assets/a3e9c750-5e84-41c0-b019-b21dd57c49b9" />
+
+Na Seção "Destiantion" em Cluster URL coloque o seguinte:
+
+```text
+https://kubernetes.default.svc
+```
+
+No campo namespace coloque o nome do namespace criado anteriormente.
+
+<img width="1443" height="330" alt="image" src="https://github.com/user-attachments/assets/e3871d7b-33ec-42d8-88ab-21b106b659b6" />
 
