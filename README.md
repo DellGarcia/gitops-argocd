@@ -12,3 +12,42 @@ O arquivo pode ser localizado em **release/kubernetes_manifests.yaml**
 
 A princípio este projeto será executado de forma local, então será necessário instalar alguma ferramenta para trabalhar com o Kubernetes, por exemplo minikube, Docker Desktop ou Rancher Desktop.
 
+## Argo CD Cluster
+
+O Argo CD é uma ferramenta de GitOps que permite que o cluster Kubernetes esteja sincronizado com o Github realizando Deploy automatico quando novos commits forem efetuados e validados.
+
+A instalação será realizada dentro de um cluster no Kubernetes, então o primeiro passo será criar um namespace para o argoCD com o seguinte comando.
+
+```bash
+kubectl create namespace argocd
+```
+
+Com o namespace criado o seguinte comando vai instalar o ArgoCD dentro do **namespace argoCD**.
+
+```bash
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+Pronto com isso o ArgoCD já vai estar instalado, podemos então realizar um Port Forwarding para acessar o dashboard pelo navegador na porta 8888, basta executar o seguinte comando:
+
+```bash
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+### Dashboard do ArgoCD (Tela de Login)
+
+<img width="1867" height="974" alt="image" src="https://github.com/user-attachments/assets/abf3f515-d2a9-437f-b68b-8e5d7daa649c" />
+
+### Como realizar no Login no Argo CD
+
+Por padrão o ArgoCD gerá um senha para o usuário admin na hora da criação, para recuperar essa senha execute o seguinte comando:
+
+```bash
+argocd admin initial-password -n argocd
+```
+
+Daí basta colocar o usuário **admin** e colocar a senha para acessar o dashboard.
+
+<img width="1867" height="974" alt="image" src="https://github.com/user-attachments/assets/4b16f0ca-6550-40d8-9473-8d440ac1c62b" />
+
+
