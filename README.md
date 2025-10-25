@@ -10,7 +10,12 @@ O arquivo pode ser localizado em **release/kubernetes_manifests.yaml**
 
 ## 🧰 Preparando o Ambiente
 
-A princípio este projeto será executado de forma local, então será necessário instalar alguma ferramenta para trabalhar com o Kubernetes, por exemplo minikube, Docker Desktop ou Rancher Desktop.
+Para executar esse projeto será necessário um ambiente Kubernetes. Existem diversas formas de usar o Kubernetes pode ser criado um cluster local usando Minikube ou Rancher Desktop, ou até usar algum serviço de Cloud como EKS ou AKS. Para este projeto utilizei o Rancher Desktop que permite criar um Cluster local e oferece uma interface gráfica bem interessante. Abaixo deixo os links dessas ferramentas caso deseje conferir:
+
+* [Minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download)
+* [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation)
+* [EKS](https://docs.aws.amazon.com/eks/latest/userguide/quickstart.html)
+* [AKS](https://learn.microsoft.com/en-us/azure/aks/get-started-aks)
 
 ## Argo CD Cluster
 
