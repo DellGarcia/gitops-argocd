@@ -17,7 +17,7 @@ Para executar esse projeto será necessário um ambiente Kubernetes. Existem div
 * [EKS](https://docs.aws.amazon.com/eks/latest/userguide/quickstart.html)
 * [AKS](https://learn.microsoft.com/en-us/azure/aks/get-started-aks)
 
-## Argo CD Cluster
+## 🐙 Argo CD Cluster
 
 O Argo CD é uma ferramenta de GitOps que permite que o cluster Kubernetes esteja sincronizado com o Github realizando Deploy automatico quando novos commits forem efetuados e validados.
 
@@ -55,7 +55,7 @@ Daí basta colocar o usuário **admin** e colocar a senha para acessar o dashboa
 
 <img width="1867" height="974" alt="image" src="https://github.com/user-attachments/assets/4b16f0ca-6550-40d8-9473-8d440ac1c62b" />
 
-### Criando um APP no ArgoCD
+## 💻 Criando um APP no ArgoCD
 
 Para que o ArgoCD comece de fato a obsvervar um repositório git e realizar o deploy automatico devemos criar um **app** dentro do ArgoCD.
 
@@ -115,14 +115,14 @@ Com isso o site estará acessível em http://localhost:3333.
 
 <img width="1853" height="970" alt="image" src="https://github.com/user-attachments/assets/e82d0a65-97d4-4814-86da-12935f518555" />
 
-## Configurando Auto Sync
+## 🔄 Configurando Auto Sync
 
 O Auto Sync faz com que o ArgoCD cheque periodicamente se houve novos commits no repositório alvo e automaticamente realizar os ajustes necessário no deploy caso necessário.
 Para ativar basta ir na aba "Details" e na seção "Sync Policy" clicar em "Enable Auto Sync".
 
 <img width="1425" height="183" alt="image" src="https://github.com/user-attachments/assets/239bda92-4259-448b-a159-0e434b135cad" />
 
-## Testando Auto Sync
+### Testando Auto Sync
 Realizar esse teste é bem simples basta alterar algo no online-boutique.yaml e realizar um commit, por exemplo pode pesquisar no arquivo pela palavra réplica no loadgenerator e alterar de 1 para 2.
 
 Loadgenerator antes do commit:
@@ -132,7 +132,7 @@ Alguns minutos depois:
 <img width="1126" height="161" alt="image" src="https://github.com/user-attachments/assets/d7c4eaab-2356-4989-92f4-a03081dfb364" />
 
 
-## Aplicando ArgoCD em repositórios privados
+## 🔐 Aplicando ArgoCD em repositórios privados
 
 Em um caso real normalmente as aplicações não costumam ficar com o código fonte exposto ao público, geralmente isso fica protegido em um repositório privado. Então surge a dúvida como posso aplicar o uso do ArgoCD se meu repositório esta privado? Testei duas formas de resolver esse problema, segue a abaixo como aplicá-las:
 
