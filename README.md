@@ -71,10 +71,10 @@ Então acesse o Dashboard do ArgoCD e clique em "+ NEW APP".
 
 Na seção "General" dê um nome ao App em ApplicationName, por exemplo "Online-Boutique", em Project marque a opção "default" e em SyncPolice deixe "Manual", as demais opções não precisa mudar.
 
-Na seção "Source" cole a URL do repositório adicionado .git no final do link.
+Na seção "Source" cole a URL do repositório adicionando .git no final do link.
 
 ```text
-https://github.com/DellGarcia/gitops-kubernetes-microservices/
+https://github.com/DellGarcia/kubernetes-microservices.git
 ```
 
 Em Revision selecione **HEAD** e em Path coloque "k8s".
